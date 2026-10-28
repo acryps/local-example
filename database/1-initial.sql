@@ -3,7 +3,7 @@
 --
 CREATE TABLE account__pointer (
 	id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-	target TEXT
+	target TEXT NOT NULL
 );
 
 CREATE TABLE account (
@@ -28,7 +28,7 @@ CREATE TABLE picture (
 --
 CREATE TABLE chat__pointer (
 	id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-	target TEXT
+	target TEXT NOT NULL
 );
 
 CREATE TABLE chat (
