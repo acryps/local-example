@@ -7,7 +7,7 @@ CREATE TABLE account__pointer (
 );
 
 CREATE TABLE account (
-	id UUID PRIMARY KEY DEFAULT uuid_generate_v4() REFERENCES account__pointer (id),
+	id UUID PRIMARY KEY REFERENCES account__pointer (id),
 
 	username TEXT NOT NULL,
 	bio TEXT
@@ -32,7 +32,7 @@ CREATE TABLE chat__pointer (
 );
 
 CREATE TABLE chat (
-	id UUID PRIMARY KEY DEFAULT uuid_generate_v4() REFERENCES chat__pointer (id),
+	id UUID PRIMARY KEY REFERENCES chat__pointer (id),
 
 	created TIMESTAMP WITHOUT TIME ZONE NOT NULL,
 
