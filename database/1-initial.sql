@@ -20,7 +20,7 @@ CREATE TABLE picture (
 	data bytea NOT NULL,
 	mime_type text NOT NULL,
 
-	account_id UUID CONSTRAINT account__pictures REFERENCES account (id) NOT NULL,
+	account_id UUID CONSTRAINT account__pictures REFERENCES account (id) NOT NULL
 );
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE chat (
 	created TIMESTAMP WITHOUT TIME ZONE NOT NULL,
 
 	from_account_id UUID CONSTRAINT from_account__chats REFERENCES account__pointer (id) NOT NULL,
-	to_account_id UUID CONSTRAINT from_account__chats REFERENCES account__pointer (id) NOT NULL
+	to_account_id UUID CONSTRAINT to_account__chats REFERENCES account__pointer (id) NOT NULL
 );
 
 CREATE TABLE message (
