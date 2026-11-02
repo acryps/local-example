@@ -11,24 +11,24 @@ type DatabaseConnection = {
 const localConnection: DatabaseConnection = {
 	tag: 'eu',
 	host: 'localhost',
-	database: 'local-eu',
-	user: 'local-eu',
-	password: 'local-eu'
+	database: 'local-europe',
+	user: 'local-europe',
+	password: 'local-europe'
 };
 
 const remoteConnections: DatabaseConnection[] = [
 	{
 		tag: 'us',
 		host: 'localhost',
-		database: 'local-us',
-		user: 'local-us',
-		password: 'local-us'
+		database: 'local-america',
+		user: 'local-america',
+		password: 'local-america'
 	},
 	{
 		tag: 'ap',
 		host: 'localhost',
-		database: 'local-ap',
-		user: 'local-ap',
-		password: 'local-ap'
+		database: 'local-asia',
+		user: 'local-asia',
+		password: 'local-asia'
 	}
 ];
