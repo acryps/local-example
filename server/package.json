@@ -12,7 +12,7 @@
 	},
 	"dependencies": {
 		"express": "^5.1.0",
-		"vlquery": "file:../../vlquery"
+		"vlquery": "^9.0.0"
 	},
 	"devDependencies": {
 		"@acryps/environment": "^2.8.0",
