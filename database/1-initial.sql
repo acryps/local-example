@@ -36,8 +36,8 @@ CREATE TABLE chat (
 
 	created TIMESTAMP WITHOUT TIME ZONE NOT NULL,
 
-	from_account_id UUID CONSTRAINT from_account__chats REFERENCES account__pointer (id) NOT NULL,
-	to_account_id UUID CONSTRAINT to_account__chats REFERENCES account__pointer (id) NOT NULL
+	from_account_id UUID CONSTRAINT from_account__from_chats REFERENCES account__pointer (id) NOT NULL,
+	to_account_id UUID CONSTRAINT to_account__to_chats REFERENCES account__pointer (id) NOT NULL
 );
 
 CREATE TABLE message (

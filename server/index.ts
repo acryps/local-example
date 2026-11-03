@@ -32,3 +32,5 @@ const remoteConnections: DatabaseConnection[] = [
 		password: 'local-asia'
 	}
 ];
+
+console.debug('Hello World');
