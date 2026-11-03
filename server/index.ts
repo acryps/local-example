@@ -1,4 +1,6 @@
-// type from local
+import { DbClient, RunContext } from 'vlquery';
+import { DbContext } from './managed/database';
+
 type DatabaseConnection = {
 	tag: string;
 	host: string;
@@ -33,4 +35,26 @@ const remoteConnections: DatabaseConnection[] = [
 	}
 ];
 
-console.debug('Hello World');
+(async () => {
+	for (let connection of [localConnection, ...remoteConnections]) {
+		const client = new DbClient({
+			host: connection.host,
+			database: connection.database,
+			user: connection.user,
+			password: connection.password
+		});
+
+		await client.connect();
+
+		const database = new DbContext(client, new RunContext());
+		const accounts = await database.account.toArray();
+
+		console.group(connection.tag);
+
+		for (let account of accounts) {
+			console.log(account.id, account.username, account.bio);
+		}
+
+		console.groupEnd();
+	}
+})();
