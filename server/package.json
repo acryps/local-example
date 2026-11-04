@@ -1,8 +1,8 @@
 {
 	"scripts": {
-		"build": "esbuild index.ts --bundle --outfile=.built/index.js --platform=node --external:vlquery --external:pg-native --external:express --target=es2018 && vlquery compile",
+		"build": "esbuild index.ts --bundle --outfile=.built/index.js --platform=node --external:@acryps/local --external:pg-native --external:express --target=es2018 && acryps-local compile",
 		"start": "npm run build && TZ=UTC environment node .built/index.js",
-		"database:update": "environment vlquery create-context"
+		"database:update": "environment acryps-local create-context"
 	},
 	"environment": {
 		"pghost": "Database Host",
@@ -11,8 +11,8 @@
 		"pgpassword": "Database Password"
 	},
 	"dependencies": {
-		"express": "^5.1.0",
-		"vlquery": "^9.0.0"
+		"@acryps/local": "file:../../local",
+		"express": "^5.1.0"
 	},
 	"devDependencies": {
 		"@acryps/environment": "^2.8.0",
