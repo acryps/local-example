@@ -59,6 +59,8 @@ database.connect().then(async () => {
 		console.debug(message.content);
 	}
 
+	// await database.move(accounts[0], 'us');
+
 	// create local
 	// const localMessage = new Message();
 	// localMessage.sent = new Date();
