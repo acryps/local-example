@@ -46,5 +46,6 @@ CREATE TABLE message (
 	sent TIMESTAMP WITHOUT TIME ZONE NOT NULL,
 	content TEXT NOT NULL,
 
-	chat_id UUID CONSTRAINT chat__messages REFERENCES chat (id) NOT NULL
+	chat_id UUID CONSTRAINT chat__messages REFERENCES chat (id) NOT NULL,
+	sender_id UUID CONSTRAINT sender__sent_messages REFERENCES account__pointer (id) NOT NULL
 );
